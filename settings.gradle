@@ -1,3 +1,4 @@
 rootProject.name='TestSonarCloud'
 include ':app'
-
+include 'TestLib'
+include 'Server'
