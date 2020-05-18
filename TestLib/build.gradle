@@ -3,9 +3,15 @@ apply plugin: 'jacoco'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.13'
+    implementation 'junit:junit:4.13'
 
 }
+
+test {
+    useJUnitPlatform()
+}
+
+
 sourceCompatibility = "8"
 targetCompatibility = "8"
 
