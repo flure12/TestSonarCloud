@@ -3,25 +3,15 @@ apply plugin: 'jacoco'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13'
 
 }
-
 sourceCompatibility = "8"
 targetCompatibility = "8"
 
 
-task jacocoTestReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
 
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
 
-    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree(dir: "${buildDir}/intermediates/javac/debug", excludes: fileFilter)
-    def mainSrc = "${project.projectDir}/src/main/java"
 
-    sourceDirectories = files([mainSrc])
-    classDirectories = files([debugTree])
-    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec")
-}
+
+
