@@ -6,6 +6,6 @@ public class TestClass {
 @org.junit.Test
 public void test () {
     Server sc = new Server();
-    sc.testMethd();
+    sc.testMethd(3);
 }
 }
